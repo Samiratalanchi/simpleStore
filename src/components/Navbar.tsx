@@ -1,9 +1,12 @@
 import { useState } from "react"
 import Cart from "./Cart"
+import { useCartSelector } from "../store/hooks"
 
 
 function Navbar() {
   const [isCartOpen, SetCartOpen] = useState(false)
+
+  const cartQuantity = useCartSelector((state) => state.cart.items.reduce((value, item) => value + item.quantity , 0))
 
   function handleOpenCart() {
     SetCartOpen(!isCartOpen)
@@ -14,7 +17,7 @@ function Navbar() {
         <Cart onClose={handleOpenCart} />
       }
       <div>
-        <button onClick={handleOpenCart}>سبد خرید (۰)</button>
+        <button onClick={handleOpenCart}>سبد خرید ({cartQuantity})</button>
       </div>
     </>
   )
