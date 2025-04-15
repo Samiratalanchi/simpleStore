@@ -11,11 +11,13 @@ function App() {
     <Provider store={store}>
       <Navbar />
       <ProductList>
-        {productData.map((item) => (
-          <div key={item.id}>
-            <Product {...item} />
-          </div>
-        ))}
+        <div className="grid grid-cols-4 w-6xl gap-3">
+          {productData.map((item) => (
+            <div key={item.id}>
+              <Product {...item} />
+            </div>
+          ))}
+        </div>
       </ProductList>
     </Provider>
   )

@@ -6,10 +6,8 @@ type ProductListProps = {
 
 function ProductList({ children }: ProductListProps) {
   return (
-    <div>
-      <div>
+    <div className="relative flex justify-center">
         {children}
-      </div>
     </div>
   )
 }
