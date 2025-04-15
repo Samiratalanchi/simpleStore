@@ -7,10 +7,10 @@ type ProductProps = {
 
 function Product({ title, price, image } : ProductProps) {
   return (
-    <div>
-      <img src={image} />
+    <div className="">
+      <img src={image} className="" />
       <div>
-        <h3>{title}</h3>
+        <h3 className="">{title}</h3>
         <p>{price}</p>
       </div>
       <button>افزودن به سبد خرید</button>
